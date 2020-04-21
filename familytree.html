@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=320, initial-scale=1">
+    <meta charset="utf-8">
+    <style>
+      body, html {
+        min-width: 100%;
+        min-height: 100%;
+        margin: 0;
+        padding: 0;
+        font: Arial 14px;
+      }
+    </style>
+    <!--<link rel="stylesheet" href="style.css"/>-->
+    <!--<script defer src="script.js"></script>-->
+  </head>
+  <body>
+    <!-- this script got from www.htmlbestcodes.com-Coded by: Krishna Eydat -->
+<html>
+<head>
+<style type="text/css">
+/*Lets start with the cloud formation rather*/
+
+/*The container will also serve as the SKY*/
+
+*{ margin: 0; padding: 0;}
+
+body {
+	/*To hide the horizontal scroller appearing during the animation*/
+	overflow: hidden;
+}
+
+#clouds{
+	padding: 100px 0;
+	background: #c9dbe9;
+	background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+	background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+	background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+}
+
+/*Time to finalise the cloud shape*/
+.cloud {
+	width: 200px; height: 60px;
+	background: #fff;
+	
+	border-radius: 200px;
+	-moz-border-radius: 200px;
+	-webkit-border-radius: 200px;
+	
+	position: relative; 
+}
+
+.cloud:before, .cloud:after {
+	content: '';
+	position: absolute; 
+	background: #fff;
+	width: 100px; height: 80px;
+	position: absolute; top: -15px; left: 10px;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+	width: 120px; height: 120px;
+	top: -55px; left: auto; right: 15px;
+}
+
+/*Time to animate*/
+.x1 {
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+	left: 200px;
+	
+	-webkit-transform: scale(0.6);
+	-moz-transform: scale(0.6);
+	transform: scale(0.6);
+	opacity: 0.6; /*opacity proportional to the size*/
+	
+	/*Speed will also be proportional to the size and opacity*/
+	/*More the speed. Less the time in 's' = seconds*/
+	-webkit-animation: moveclouds 25s linear infinite;
+	-moz-animation: moveclouds 25s linear infinite;
+	-o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+	left: -250px; top: -200px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+.x4 {
+	left: 470px; top: -250px;
+	
+	-webkit-transform: scale(0.75);
+	-moz-transform: scale(0.75);
+	transform: scale(0.75);
+	opacity: 0.75; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 18s linear infinite;
+	-moz-animation: moveclouds 18s linear infinite;
+	-o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+	left: -150px; top: -150px;
+	
+	-webkit-transform: scale(0.8);
+	-moz-transform: scale(0.8);
+	transform: scale(0.8);
+	opacity: 0.8; /*opacity proportional to the size*/
+	
+	-webkit-animation: moveclouds 20s linear infinite;
+	-moz-animation: moveclouds 20s linear infinite;
+	-o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-moz-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+@-o-keyframes moveclouds {
+	0% {margin-left: 1000px;}
+	100% {margin-left: -1000px;}
+}
+</style>
+</head>
+<body>
+<div id="clouds">
+	<div class="cloud x1"></div>
+	<!-- Time for multiple clouds to dance around -->
+	<div class="cloud x2"></div>
+	<div class="cloud x3"></div>
+	<div class="cloud x4"></div>
+	<div class="cloud x5"></div>
+</div>
+<div><a target="_blank" href="http://www.htmlbestcodes.com/"><span style="font-size: 8pt; text-decoration: none">HTML Best Codes</span></a></div>
+</body>
+</html>
+  </body>
+  <body>
+    <!-- this script got from www.htmlbestcodes.com-Coded by: Krishna Eydat -->
+<html>
+<head>
+<style type="text/css">
+/*Now the CSS*/
+* {margin: 0; padding: 0;}
+
+.tree ul {
+	padding-top: 20px; position: relative;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+.tree li {
+	float: left; text-align: center;
+	list-style-type: none;
+	position: relative;
+	padding: 20px 5px 0 5px;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*We will use ::before and ::after to draw the connectors*/
+
+.tree li::before, .tree li::after{
+	content: '';
+	position: absolute; top: 0; right: 50%;
+	border-top: 1px solid #ccc;
+	width: 50%; height: 20px;
+}
+.tree li::after{
+	right: auto; left: 50%;
+	border-left: 1px solid #ccc;
+}
+
+/*We need to remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after, .tree li:only-child::before {
+	display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child{ padding-top: 0;}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before, .tree li:last-child::after{
+	border: 0 none;
+}
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before{
+	border-right: 1px solid #ccc;
+	border-radius: 0 5px 0 0;
+	-webkit-border-radius: 0 5px 0 0;
+	-moz-border-radius: 0 5px 0 0;
+}
+.tree li:first-child::after{
+	border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+	-moz-border-radius: 5px 0 0 0;
+}
+
+/*Time to add downward connectors from parents*/
+.tree ul ul::before{
+	content: '';
+	position: absolute; top: 0; left: 50%;
+	border-left: 1px solid #ccc;
+	width: 0; height: 20px;
+}
+
+.tree li a{
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	text-decoration: none;
+	color: #666;
+	font-family: arial, verdana, tahoma;
+	font-size: 11px;
+	display: inline-block;
+	
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+
+/*Time for some hover effects*/
+/*We will apply the hover effect the the lineage of the element also*/
+.tree li a:hover, .tree li a:hover+ul li a {
+	background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
+}
+/*Connector styles on hover*/
+.tree li a:hover+ul li::after, 
+.tree li a:hover+ul li::before, 
+.tree li a:hover+ul::before, 
+.tree li a:hover+ul ul::before{
+	border-color:  #94a0b4;
+}
+
+/*Thats all. I hope you enjoyed it.
+Thanks :)*/
+</style>
+</head>
+<body>
+
+<div class="tree">
+	<ul>
+		<li>
+			<a href="#">Nanny</a>
+			<ul>
+				<li>
+					<a href="#">Mum</a>
+					<ul>
+						<li>
+							<a href="#">Ben</a>
+                          <a href="#">rosie</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#">rhea</a>
+					<ul>
+						<li><a href="#">oliver</a></li>
+						<li>
+							<a href="#">lilly</a>
+                          <li>
+                          <a href="#">amelia</a>
+                      </li>
+						
+									
+								
+								
+									
+								
+							</ul>
+						</li>
+              <li><a href="#">abby</a></li>
+             
+              
+              </ul>
+					</ul>
+				</li>
+			</ul>
+		
+	
+</div>
+
+<br/><br/><div style="clear:both"></div><div><a target="_blank" href="http://www.htmlbestcodes.com/"><span style="font-size: 8pt; text-decoration: none">HTML Best Codes</span></a></div>
+</body>
+  <body>
+    <!-- This Script is from www.htmlfreecode.com, Coded by: Krishna Eydat-->
+
+<HEAD>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!-- Begin
+var africaArray =  new Array("('Select country','',true,true)",
+"('Ethiopia')",
+"('Somalia')",
+"('South Africa')",
+"('Other')");
+var middleeastArray =  new Array("('Select country','',true,true)",
+"('Egypt')",
+"('Iran')",
+"('Israel')",
+"('Kuwait')",
+"('Lebanon')",
+"('Morocco')",
+"('Saudi Arabia')",
+"('Syria')",
+"('Turkey')",
+"('U. A. Emirates')",
+"('Other')");
+var asiaArray =  new Array("('Select country','',true,true)",
+"('Armenia')",
+"('Bangladesh')",
+"('Cambodia')",
+"('China')",
+"('India')",
+"('Indonesia')",
+"('Iran')",
+"('Japan')",
+"('Malaysia')",
+"('Myanmar')",
+"('Nepal')",
+"('Pakistan')",
+"('Philippines')",
+"('Singapore')",
+"('South Korea')",
+"('Sri Lanka')",
+"('Taiwan')",
+"('Thailand')",
+"('Uzbekistan')",
+"('Vietnam')",
+"('Other')");
+var europeArray =  new Array("('Select country','',true,true)",
+"('Albania')",
+"('Austria')",
+"('Belarus')",
+"('Belgium')",
+"('Bosnia')",
+"('Bulgaria')",
+"('Croatia')",
+"('Cyprus')",
+"('Czech Rep.')",
+"('Denmark')",
+"('Estonia')",
+"('Finland')",
+"('France')",
+"('Germany')",
+"('Greece')",
+"('Hungary')",
+"('Iceland')",
+"('Ireland')",
+"('Italy')",
+"('Latvia')",
+"('Liechtenstein')",
+"('Lithuania')",
+"('Luxembourg')",
+"('Macedonia')",
+"('Malta')",
+"('Monaco')",
+"('Netherlands')",
+"('Norway')",
+"('Poland')",
+"('Portugal')",
+"('Romania')",
+"('Russia')",
+"('Slovakia')",
+"('Slovenia')",
+"('Spain')",
+"('Sweden')",
+"('Switzerland')",
+"('Ukraine')",
+"('United Kingdom')",
+"('Other')");
+var australiaArray =  new Array("('Select country','',true,true)",
+"('Australia')",
+"('New Zealand')",
+"('Other')");
+var lamericaArray =  new Array("('Select country','',true,true)",
+"('Costa Rica')",
+"('Cuba')",
+"('El Salvador')",
+"('Guatemala')",
+"('Haiti')",
+"('Jamaica')",
+"('Mexico')",
+"('Panama')",
+"('Other')");
+var namericaArray =  new Array("('Select country','',true,true)",
+"('Canada')",
+"('USA')",
+"('Other')");
+var samericaArray =  new Array("('Select country','',true,true)",
+"('Argentina')",
+"('Bolivia')",
+"('Brazil')",
+"('Chile')",
+"('Colombia')",
+"('Ecuador')",
+"('Paraguay')",
+"('Peru')",
+"('Suriname')",
+"('Uruguay')",
+"('Venezuela')",
+"('Other')");
+function populateCountry(inForm,selected) {
+var selectedArray = eval(selected + "Array");
+while (selectedArray.length < inForm.country.options.length) {
+inForm.country.options[(inForm.country.options.length - 1)] = null;
+}
+for (var i=0; i < selectedArray.length; i++) {
+eval("inForm.country.options[i]=" + "new Option" + selectedArray[i]);
+}
+if (inForm.region.options[0].value == '') {
+inForm.region.options[0]= null;
+if ( navigator.appName == 'Netscape') {
+if (parseInt(navigator.appVersion) < 4) {
+window.history.go(0);
+}
+else {   	
+if (navigator.platform == 'Win32' || navigator.platform == 'Win16') {
+window.history.go(0);
+            }
+         }
+      }
+   }
+}
+function populateUSstate(inForm,selected) {  
+var stateArray =  new Array("('Select State','',true,true)",
+"('Alabama')",
+"('Alaska')",
+"('Arizona')",
+"('Arkansas')",
+"('California')",
+"('Colorado')",
+"('Connecticut')",
+"('Delaware')",
+"('Columbia')",
+"('Florida')",
+"('Georgia')",
+"('Hawaii')",
+"('Idaho')",
+"('Illinois')",
+"('Indiana')",
+"('Iowa')",
+"('Kansas')",
+"('Kentucky')",
+"('Louisiana')",
+"('Maine')",
+"('Maryland')",
+"('Massachusetts')",
+"('Michigan')",
+"('Minnesota')",
+"('Mississippi')",
+"('Missouri')",
+"('Montana')",
+"('Nebraska')",
+"('Nevada')",
+"('New Hampshire')",
+"('New Jersey')",
+"('New Mexico')",
+"('New York')",
+"('North Carolina')",
+"('North Dakota')",
+"('Ohio')",
+"('Oklahoma')",
+"('Oregon')",
+"('Pennsylvania')",
+"('Rhode Island')",
+"('South Carolina')",
+"('South Dakota')",
+"('Tennessee')",
+"('Texas')",
+"('Utah')",
+"('Vermont')",
+"('Virginia')",
+"('Washington')",
+"('West Virginia')",
+"('Wisconsin')",
+"('Wyoming')");
+if (selected == 'USA') {
+for (var i=0; i < stateArray.length; i++) {
+eval("inForm.country.options[i]=" + "new Option" + stateArray[i]);
+}
+if ( navigator.appName == 'Netscape') {
+if (parseInt(navigator.appVersion) < 4) {
+window.history.go(0)
+}
+else {    	
+if (navigator.platform == 'Win32' || navigator.platform == 'Win16') {
+window.history.go(0)
+         }
+      }
+   }
+}
+else {
+}  
+if (selected == 'Other') {
+newCountry = "";
+while (newCountry == ""){
+newCountry=prompt ("Please enter the name of your country.", "");
+}
+if (newCountry != null) {
+inForm.country.options[(inForm.country.options.length-1)]=new Option(newCountry,newCountry,true,true);
+inForm.country.options[inForm.country.options.length]=new Option('Other, not listed','Other');
+   }
+}
+if(inForm.country.options[0].text == 'Select country') {
+inForm.country.options[0]= null;
+   }
+}
+// End -->
+</script>
+
+<!-- CCONTINUE  -->
+
+<BODY>
+
+<center>
+<form name="globe">
+<select name="region" onChange="populateCountry(document.globe,document.globe.region.options[document.globe.region.selectedIndex].value)">
+<option selected value=''>Select Region</option>
+<option value='asia'>Asia</option>
+<option value='africa'>Africa</option>
+<option value='australia'>Australia</option>
+<option value='europe'>Europe</option>
+<option value='middleeast'>Middle East</option>
+<option value='lamerica'>Latin America</option>
+<option value='namerica'>North America</option>
+<option value='samerica'>South America</option>
+</select>
+<select name="country" onChange="populateUSstate(document.globe,document.globe.country.options[document.globe.country.selectedIndex].text)">
+<option value=''><--------------------</option>
+</select>
+</form>
+</center>
+<br />
+<font face="Tahoma"><a target="_blank" href="http://www.htmlfreecode.com/"><span style="font-size: 8pt; text-decoration: none">HTML Free Code</span></a></font>
+ 
+  </body>
+  <body>
+    <!-- this script got from www.htmlfreecode.com-Coded by: Krishna Eydat -->
+<html>
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>New Page 2</title>
+</head>
+
+<body>
+<table BORDER="0" WIDTH="222" HEIGHT="18">
+  <tr>
+    <td WIDTH="214" HEIGHT="10">
+    <form NAME="search" ID="search" ACTION="http://search.msn.com/results.asp" METHOD="get">
+      <p><font FACE="arial" SIZE="2"><strong>Search
+      <font COLOR="#808080">the Web for:</font></strong></font><br>
+      <input TYPE="text" ID="q" SIZE="18" MAXLENGTH="251" NAME="q" VCARD_NAME="SearchText"><input TYPE="submit" VALUE="Search" NAME="B1"><input TYPE="hidden" NAME="FORM" VALUE="FRNT"><input TYPE="hidden" NAME="un" VALUE="doc"><input TYPE="hidden" NAME="v" VALUE="1"></p>
+    </form>
+    </td>
+  </tr>
+</table>
+<p> </p>
+</body>
+</html>
+
+</body>
+</html>
+<font face="Tahoma"><a target="_blank" href="http://www.htmlfreecode.com/"><span style="font-size: 8pt; text-decoration: none">JavaScript Free Code</span></a></font>
+  </body>
+</html>
